@@ -1,0 +1,11 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "/home/kidd/code-201/projects/lab5a/-code-201-lab5a/js/tests.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
