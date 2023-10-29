@@ -66,7 +66,7 @@ console.log(result[2]);
 console.log(result[3]);
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -81,15 +81,23 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
+function sumArray(sumArr) {
+  var sumResult = 0;
 
-function sumArray(sumArr) { //eslint-disable-line
+  for (var i = 0; i < sumArr.length; i++) {
+    // Use the sum function to calculate the sum of elements in the array
+    sumResult = sum(sumResult, sumArr[i])[0];
+  }
 
+  var numbers = sumArr.join(',');
+  var message = numbers + ' was passed in as an array of numbers, and ' + sumResult + ' is their sum.';
+  return [sumResult, message];
 }
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -104,12 +112,35 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
+/* Problem 5
+Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
+"The numbers 2,3,4 have a product of 24."
+
+IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
+
+Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
+
+// Write your code here
+function multiplyArray(multArr) {
+  var productResult = 1;
+
+  for (var i = 0; i < multArr.length; i++) {
+    // Use the multiply function to calculate the product of elements in the array
+    productResult = multiply(productResult, multArr[i])[0];
+  }
+
+  var numbers = multArr.join(',');
+  var message = 'The numbers ' + numbers + ' have a product of ' + productResult + '.';
+  return [productResult, message];
 }
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
+
+// Here is the test for multiplyArray(); uncomment it to run it
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
