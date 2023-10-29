@@ -174,8 +174,6 @@ function multiplyAnyArray(dynamicArray) {
   var message = 'The numbers ' + numbers + ' have a product of ' + productResult + '.';
   return [productResult, message];
 }
-
-
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyAnyArray(testDynamicArray);
 
