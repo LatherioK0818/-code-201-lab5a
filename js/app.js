@@ -55,15 +55,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  var sumResult = a + b + c;
-  var productResult = a * b * c;
+  var sumResult = sum(sum(a, b)[0], c)[0];
+  var productResult = multiply(multiply(a, b)[0], c)[0];
   var sumMessage = a + ' and ' + b + ' and ' + c + ' sum to ' + sumResult + '.';
   var productMessage = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productResult + '.';
   return [sumResult, productResult, sumMessage, productMessage];
 }
-var result = sumAndMultiply(4, 7, 5);
-console.log(result[2]);
-console.log(result[3]);
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
@@ -79,13 +76,18 @@ Write a function called sumArray() that takes in an array of numbers as its sing
 IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
+// Define the testSumArray function
+function testSumArray(arr) {
+  var result = sumArray(arr);
+  console.log(result[0]); // Output the sum result
+  console.log(result[1]); // Output the message
+}
 
-// Write your code here
+// Your sumArray function
 function sumArray(sumArr) {
   var sumResult = 0;
 
   for (var i = 0; i < sumArr.length; i++) {
-    // Use the sum function to calculate the sum of elements in the array
     sumResult = sum(sumResult, sumArr[i])[0];
   }
 
@@ -93,10 +95,9 @@ function sumArray(sumArr) {
   var message = numbers + ' was passed in as an array of numbers, and ' + sumResult + ' is their sum.';
   return [sumResult, message];
 }
-
-
+// Define your sum function (if not defined already)
+var testArray = [2, 3, 4];
 // Here is the test for sumArray(); uncomment it to run it
-
 testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
